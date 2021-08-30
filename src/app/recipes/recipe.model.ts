@@ -3,4 +3,5 @@ export class Recipe {
   image: string;
   description: string;
   title: string;
+  ingredients: string[];
 }

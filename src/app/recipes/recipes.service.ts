@@ -12,6 +12,7 @@ export class RecipesService {
         'https://www.carolinescooking.com/wp-content/uploads/2016/06/Wiener-schnitzel-ohead-pic.jpg',
       description: 'A tasty Schnitzel',
       title: 'Schnitzel',
+      ingredients: ['Chicken Meat', 'Gravy', 'Fries', 'Bread-Crumbs'],
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ export class RecipesService {
         'https://seabitesseafood.com.au/wp-content/uploads/2020/04/angus-burger.jpg',
       description: 'A tasty Burger',
       title: 'Burger',
+      ingredients: ['Burger Patty', 'Bread', 'Lettuice', 'Burger Sauce'],
     },
   ];
 
@@ -30,5 +32,9 @@ export class RecipesService {
 
   getRecipe(recipeId: number) {
     return { ...this.recipes.find((recipe: Recipe) => recipe.id === recipeId) };
+  }
+
+  deleteRecipe(recipeId: number) {
+    this.recipes = this.recipes.filter((recipe) => recipe.id === recipeId);
   }
 }
